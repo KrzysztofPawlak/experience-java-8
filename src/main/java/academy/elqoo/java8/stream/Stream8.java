@@ -113,7 +113,7 @@ public class Stream8 {
     }
 
     public static List<Integer> generate10RandomNumbers(){
-        throw new NotImplementedException();
+        return new Random().ints(10).collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
     }
 
     public static User findOldest(List<User> users){
