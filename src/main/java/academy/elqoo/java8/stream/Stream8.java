@@ -105,7 +105,7 @@ public class Stream8 {
     }
 
     public static List<Integer> generateFirst10PrimeNumbers(){
-        throw new NotImplementedException();
+        return IntStream.rangeClosed(2, 100).filter(Stream8::isPrime).limit(10).boxed().collect(toList());
     }
 
     public static boolean isPrime(int number) {
