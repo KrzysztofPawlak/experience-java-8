@@ -117,11 +117,11 @@ public class Stream8 {
     }
 
     public static User findOldest(List<User> users){
-        throw new NotImplementedException();
+        return users.stream().max(Comparator.comparingInt(User::getAge)).orElse(null);
     }
 
     public static int sumAge(List<User> users){
-        throw new NotImplementedException();
+        return users.stream().map(User::getAge).reduce(0, Integer::sum);
     }
 
     public static IntSummaryStatistics ageSummaryStatistics(List<User> users){
