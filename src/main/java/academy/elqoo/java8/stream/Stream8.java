@@ -101,7 +101,7 @@ public class Stream8 {
     }
 
     public static Stream<Integer> getBoxedStream(IntStream stream){
-        throw new NotImplementedException();
+        return stream.boxed();
     }
 
     public static List<Integer> generateFirst10PrimeNumbers(){
