@@ -9,7 +9,6 @@ public class Transaction {
 
     public void stop() {
 
-
     }
 
 }

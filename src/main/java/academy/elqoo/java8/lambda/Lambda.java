@@ -12,9 +12,10 @@ public class Lambda {
         return strings.stream().filter(condition).collect(Collectors.toList());
     }
 
-    public static void processWithinTransaction(/*Runnable runnable*/){
+    public static void processWithinTransaction(Runnable runnable){
         Transaction transaction = new Transaction();
         transaction.start();
+        runnable.run();
         transaction.stop();
     }
 
