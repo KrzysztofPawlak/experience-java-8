@@ -4,6 +4,7 @@ package academy.elqoo.java8.lambda;
 import java.util.List;
 import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public class Lambda {
@@ -19,8 +20,8 @@ public class Lambda {
         transaction.stop();
     }
 
-    public static String create(/* add functional interface to create something */){
-        return null;
+    public static String create(Supplier<String> s){
+        return s.get();
     }
 
     public static Integer getStringLength(String s /*place a function here*/){
