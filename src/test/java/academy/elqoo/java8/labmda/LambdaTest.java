@@ -21,27 +21,27 @@ public class LambdaTest {
     @Test
     public void removeStringsWithMoreThanThreeCharacters(){
         List<String> input = asList("This", "is", "java", "8");
-        //input = Lambda.filter(input, s -> s.length()<3)
-;       assertThat(input, contains("is", "8"));
+        input = Lambda.filter(input, s -> s.length()<3);
+        assertThat(input, contains("is", "8"));
     }
 
     @Test
     public void shouldBeExecutedWitingATransaction(){
         TransactionLambda lambda = new TransactionLambda();
-        //Lambda.processWithinTransaction(lambda);
+        Lambda.processWithinTransaction(lambda);
         assertTrue(lambda.isConsumed());
     }
 
     @Test
     public void shouldCreateAString(){
-        String bigString = Lambda.create();
+        String bigString = Lambda.create(() -> "test");
         assertTrue(bigString.length()>0);
     }
 
     @Test
     public void extractStringSize(){
         String myString = "This is great";
-        int length = Lambda.getStringLength(myString/* get string length*/);
+        int length = Lambda.getStringLength(myString, s -> s.length());
         assertTrue(length==13);
     }
 

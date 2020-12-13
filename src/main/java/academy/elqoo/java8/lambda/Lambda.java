@@ -3,6 +3,7 @@ package academy.elqoo.java8.lambda;
 
 import java.util.List;
 import java.util.function.BinaryOperator;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
@@ -24,8 +25,8 @@ public class Lambda {
         return s.get();
     }
 
-    public static Integer getStringLength(String s /*place a function here*/){
-        return null;
+    public static Integer getStringLength(String s, Function<String, Integer> function){
+        return function.apply(s);
     }
 
     public static int multiply(int a, int b /* add a functional interface here */){
