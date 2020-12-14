@@ -6,6 +6,7 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalAmount;
 
 import static java.time.Month.JANUARY;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -27,9 +28,9 @@ public class DateAndTimeTest {
     @Test
     public void shouldGotoFirstOfNextMonth(){
         LocalDate newYearsEve = DateTime8.createNewYearsEve2017();
-        LocalDate firstJanuary2018 = null;
+        LocalDate firstJanuary2018 = newYearsEve.plusDays(1);
         assertThat(firstJanuary2018.getYear(), is(equalTo(2018)));
-        assertThat(firstJanuary2018.getMonth(), is(equalTo(Month.DECEMBER)));
+        assertThat(firstJanuary2018.getMonth(), is(equalTo(JANUARY)));
         assertThat(firstJanuary2018.getDayOfMonth(), is(equalTo(1)));
     }
 
