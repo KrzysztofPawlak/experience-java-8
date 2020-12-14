@@ -29,8 +29,8 @@ public class Lambda {
         return function.apply(s);
     }
 
-    public static int multiply(int a, int b /* add a functional interface here */){
-        return 0;
+    public static int multiply(int a, int b, BinaryOperator<Integer> function){
+        return function.apply(a, b);
     }
 
     public static List<String> sortStrings(List<String> strings /* sorting can be done using a comparator */){

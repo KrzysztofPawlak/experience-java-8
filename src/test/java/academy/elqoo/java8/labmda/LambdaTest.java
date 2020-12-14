@@ -49,7 +49,7 @@ public class LambdaTest {
     public void multiply(){
         int a = 5;
         int b = 6;
-        int result = Lambda.multiply(a,b);
+        int result = Lambda.multiply(a,b, (v1, v2) -> v1 * v2);
         assertTrue(result==30);
     }
 
