@@ -5,12 +5,11 @@ import org.junit.Test;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.time.temporal.ChronoField;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalAmount;
+import java.time.temporal.*;
 
 import static java.time.Month.JANUARY;
 import static java.time.temporal.ChronoUnit.DAYS;
+import static java.time.temporal.ChronoUnit.YEARS;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
@@ -119,8 +118,8 @@ public class DateAndTimeTest {
     @Test
     public void shouldUseWithMethodtoChangeDate() {
         LocalDate newYearsEve = DateTime8.createNewYearsEve2017();
-        LocalDate newYearsEve2018 = null; // change the newYearsEve using the with method
-        LocalDate firstJanuary = null;
+        LocalDate newYearsEve2018 = newYearsEve.with(ChronoField.YEAR, 2018); // change the newYearsEve using the with method
+        LocalDate firstJanuary = newYearsEve2018.with(JANUARY).with(TemporalAdjusters.firstDayOfMonth());
         assertThat(2018, equalTo(newYearsEve2018.getYear()));
         assertThat(1, equalTo(firstJanuary.getDayOfMonth()));
     }
