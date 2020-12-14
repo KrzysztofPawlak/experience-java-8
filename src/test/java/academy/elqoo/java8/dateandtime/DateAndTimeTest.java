@@ -10,6 +10,7 @@ import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAmount;
 
 import static java.time.Month.JANUARY;
+import static java.time.temporal.ChronoUnit.DAYS;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
@@ -82,7 +83,7 @@ public class DateAndTimeTest {
     }
 
     @Test
-    public void shouldCreateNewYearsInstant(){
+    public void shouldCreateNewYearsInstant(){ // 2020-12-31 12:00:00
         Instant newYearsEveInstant = Instant.ofEpochMilli(1609416000); // use https://www.epochconverter.com/ to create the instance
         assertNotNull(newYearsEveInstant);
     }
@@ -90,7 +91,7 @@ public class DateAndTimeTest {
     @Test
     public void shouldCalculateDaysBetween(){
         LocalDate[] dates = DateTime8.getTwoLocalDates();
-        long daysBetween = 0; // calculate days between dates[0] and dates[1]
+        long daysBetween = DAYS.between(dates[0], dates[1]); // calculate days between dates[0] and dates[1]
         assertThat(DateTime8.DAYS_BETWEEN, equalTo(daysBetween));
     }
 
