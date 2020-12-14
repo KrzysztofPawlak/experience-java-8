@@ -57,8 +57,8 @@ public class DateAndTimeTest {
 
     @Test(expected = DateTimeParseException.class)
     public void shouldThrowParseException(){
-        String newYearsEveAsString = null;
-        LocalDate newYearsEve = null; // parse the an error
+        String newYearsEveAsString = "2017-12-31";
+        LocalDate newYearsEve = LocalDate.parse(newYearsEveAsString, DateTimeFormatter.ofPattern("dd-mm-yyyy")); // parse the an error
     }
 
     @Test
