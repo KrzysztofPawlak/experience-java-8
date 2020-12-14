@@ -63,8 +63,8 @@ public class DateAndTimeTest {
 
     @Test
     public void shouldParseLocalTime(){
-        String midnightAsString = null;
-        LocalTime midnight = null; // parse the time
+        String midnightAsString = "00:00:00";
+        LocalTime midnight = LocalTime.parse(midnightAsString); // parse the time
         assertThat(midnight.getHour(), is(equalTo(0)));
         assertThat(midnight.getMinute(), is(equalTo(0)));
         assertThat(midnight.getSecond(), is(equalTo(0)));
