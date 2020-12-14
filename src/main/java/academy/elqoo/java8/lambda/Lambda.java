@@ -1,6 +1,8 @@
 package academy.elqoo.java8.lambda;
 
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
@@ -33,8 +35,9 @@ public class Lambda {
         return function.apply(a, b);
     }
 
-    public static List<String> sortStrings(List<String> strings /* sorting can be done using a comparator */){
-         return null;
+    public static List<String> sortStrings(List<String> strings, Comparator<String> stringComparator){
+        strings.sort(stringComparator);
+        return strings;
     }
 
 }

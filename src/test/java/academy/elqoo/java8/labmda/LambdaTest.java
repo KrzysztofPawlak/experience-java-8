@@ -56,7 +56,7 @@ public class LambdaTest {
     @Test
     public void shouldSortStrings() throws Exception {
         List<String> input = Arrays.asList("C", "F", "A", "D", "B", "E");
-        List<String> result = Lambda.sortStrings(input);
+        List<String> result = Lambda.sortStrings(input, String::compareTo);
         assertThat(result, is(equalTo(Arrays.asList("A", "B", "C", "D", "E", "F"))));
     }
 
