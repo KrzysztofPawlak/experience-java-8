@@ -83,7 +83,7 @@ public class DateAndTimeTest {
 
     @Test
     public void shouldCreateNewYearsInstant(){
-        Instant newYearsEveInstant = null; // use https://www.epochconverter.com/ to create the instance
+        Instant newYearsEveInstant = Instant.ofEpochMilli(1609416000); // use https://www.epochconverter.com/ to create the instance
         assertNotNull(newYearsEveInstant);
     }
 
