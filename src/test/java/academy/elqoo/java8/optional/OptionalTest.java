@@ -33,7 +33,7 @@ public class OptionalTest {
     @Test(expected = NoSuchElementException.class)
     public void shouldThrowNoElementException(){
         Optional<Book> book = Optional8.getBook();
-        book.get().getAuthor();
+        book.get().getAuthor().orElseThrow(NoSuchElementException::new);
     }
 
     @Test(expected = MyCustomException.class)
