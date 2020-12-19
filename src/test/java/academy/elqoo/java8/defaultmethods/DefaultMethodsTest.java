@@ -55,8 +55,8 @@ public class DefaultMethodsTest {
     @Test
     public void shouldProvideName(){
         // make rectangle implement NamedObject
-        NamedObject namedObject = null; // = new Rectangle()
-        assertThat("fill in right name here",equalTo(namedObject.getName()));
+        NamedObject namedObject = new Rectangle();
+        assertThat("Abstract Shape",equalTo(namedObject.getName()));
     }
 
 
