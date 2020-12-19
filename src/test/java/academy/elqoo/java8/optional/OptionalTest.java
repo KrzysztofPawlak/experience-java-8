@@ -26,7 +26,7 @@ public class OptionalTest {
     @Test
     public void shouldReturnBookAuthor(){
         Optional<Book> book = Optional8.getBookWithAuthor();
-        String authorName = null; // book. ....
+        String authorName = book.get().getAuthor().get(); // book. ....
         assertThat(authorName,equalTo("Stijn De Mulder"));
     }
 
