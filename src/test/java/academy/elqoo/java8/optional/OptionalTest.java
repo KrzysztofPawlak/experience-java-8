@@ -37,9 +37,9 @@ public class OptionalTest {
     }
 
     @Test(expected = MyCustomException.class)
-    public void shouldThrowOptionalEmptyException(){
+    public void shouldThrowOptionalEmptyException() throws MyCustomException {
         Optional<Book> book = Optional8.getBook();
-        book.get().getAuthor(); // getAuthor.or.....
+        book.get().getAuthor().orElseThrow(MyCustomException::new); // getAuthor.or.....
     }
 
 }
