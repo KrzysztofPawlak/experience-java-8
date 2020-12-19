@@ -37,7 +37,7 @@ public class DefaultMethodsTest {
     public void shouldThrowNotImplementedException(){
         // add an optional method to the shape method
         Triangle triangle = new Triangle();
-        // triangle.notImplementedMethod();
+         triangle.notImplementedMethod();
     }
 
     @Test

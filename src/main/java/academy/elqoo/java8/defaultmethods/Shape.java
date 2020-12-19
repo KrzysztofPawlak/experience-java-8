@@ -1,5 +1,7 @@
 package academy.elqoo.java8.defaultmethods;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 import java.util.List;
 
 public interface Shape {
@@ -25,5 +27,9 @@ public interface Shape {
         for (AbstractShape as : shapes) {
             as.setXPos(as.getXPos() + 10);
         }
+    }
+
+    default void notImplementedMethod() {
+        throw new NotImplementedException();
     }
 }
